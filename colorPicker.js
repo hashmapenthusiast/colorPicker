@@ -67,7 +67,7 @@ function colorCodeGen(f, a) {
  * catches the color function option
  * @returns {string} a color from the color function
  */
-function color(){
+function colorFunction(){
     return `color(sRGB 0.7 0.9 0.6)`
 }
 
@@ -120,7 +120,6 @@ function hsla() {
     return colorCodeGen('hsla', [h,s,l,a])
 }
 
-}
 /**
  * catches the hwb option
  * @returns 
