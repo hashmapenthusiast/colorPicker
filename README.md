@@ -16,9 +16,8 @@ These will not have widespread adoption as of 4 April 2022
 * lab
 * oklch
 * oklab
- some of these do not work yet. I've also read that there is an 
- #RRGGBBAA color type
 
- should allow for user input
-
- and changes the display style
+TODO
+* #RRGGBBAA color type
+* should allow for user input
+* and changes the display style
