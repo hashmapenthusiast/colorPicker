@@ -108,10 +108,19 @@ function lab() {
 let colorF = hex6;
 
 document.querySelector('#colorChange').addEventListener('click', function () {
-        console.log('button clicked')
+        // console.log('button clicked')
         changeColor(colorF)
     }
 )
+
+window.addEventListener('keydown',function(e){
+    // console.log(e)
+    if (e.code === 'Space' && !e.repeat){
+        changeColor(colorF)
+    }
+})
+
+
 
 function changeColor(colorFunc) {
     // console.log(colorFunc)
