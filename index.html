@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color picker</title>
     <!-- inspiration from https://www.vanillajavascriptprojects.com/ -->
+    <!-- color reference found https://www.w3.org/TR/css-color-4/#funcdef-color -->
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -21,29 +22,61 @@
             <legend>Color types</legend>
             <fieldset>
                 <legend>working</legend>
-                <input type="radio" name="colorSpace" id="english" checked="true">
-                <label for="english">english</label>
-                <input type="radio" name="colorSpace" id="hex6" checked="true">
-                <label for="hex6">Long Hexidecimal</label>
-                <input type="radio" name="colorSpace" id="hex3">
-                <label for="hex3">short Hexidecimal</label>
-                <input type="radio" name="colorSpace" id="rgb">
-                <label for="rgb">Red Green Blue</label>
-                <input type="radio" name="colorSpace" id="rgba">
-                <label for="rgba">Red Green Blue Alpha</label>
-                <input type="radio" name="colorSpace" id="hsl">
-                <label for="hsl">Hue Saturation lightness</label>
-                <input type="radio" name="colorSpace" id="hsla">
-                <label for="hsla">Hue Saturation lightness Alpha</label>
+                <label for="color">
+                    <input type="radio" name="colorSpace" id="color" checked="true">
+                    Color Function
+                </label>
+                <label for="english">
+                    <input type="radio" name="colorSpace" id="english" checked="true">
+                    English Name
+                </label>
+                <label for="hex3">
+                    <input type="radio" name="colorSpace" id="hex3">
+                    Short Hexidecimal
+                </label>
+                <label for="hex6">
+                    <input type="radio" name="colorSpace" id="hex6" checked="true">
+                    Long Hexidecimal
+                </label>
+                <label for="rgb">
+                    <input type="radio" name="colorSpace" id="rgb">
+                    Red Green Blue
+                </label>
+                <label for="rgba">
+                    <input type="radio" name="colorSpace" id="rgba">
+                    Red Green Blue Alpha
+                </label>
+                <label for="hsl">
+                    <input type="radio" name="colorSpace" id="hsl">
+                    Hue Saturation Lightness
+                </label>
+                <label for="hsla">
+                    <input type="radio" name="colorSpace" id="hsla">
+                    Hue Saturation Lightness Alpha
+                </label>
             </fieldset>
             <fieldset>
                 <legend>may not work</legend>
-                <input type="radio" name="colorSpace" id="hwb">
-                <label for="hwb">Hue Whiteness Blackness</label>
-                <input type="radio" name="colorSpace" id="lch">
-                <label for="lch">lch</label>
-                <input type="radio" name="colorSpace" id="lab">
-                <label for="lab">lab</label>
+                <label for="hwb">
+                    <input type="radio" name="colorSpace" id="hwb">
+                    Hue Whiteness Blackness
+                </label>
+                <label for="lch">
+                    <input type="radio" name="colorSpace" id="lch">
+                    CIE Lightness Chroma Hue
+                </label>
+                <label for="lab">
+                    <input type="radio" name="colorSpace" id="lab">
+                    CIE Lightness a b
+                </label>
+                <label for="oklch">
+                    <input type="radio" name="colorSpace" id="oklch">
+                    OK Lightness Chroma Hue
+                </label>
+                <label for="oklab">
+                    <input type="radio" name="colorSpace" id="oklab">
+                    OK Lightness a b
+                </label>
             </fieldset>
         </fieldset>
     </main>
