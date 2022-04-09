@@ -1,42 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color picker</title>
-</head>
-<body>
     <!-- inspiration from https://www.vanillajavascriptprojects.com/ -->
-    <div>
-        <p>background color: <span id="colorValue">#ffffff</span></p>
-    </div>
-    <div>
-        <button id="colorChange">Click Me to Change Color!</button>
-    </div>
-    <fieldset>
+    <link rel="stylesheet" href="./style.css">
+</head>
 
-        <input type="radio" name="colorSpace" id="english" checked="true">
-        <label for="english">english</label>
-        <input type="radio" name="colorSpace" id="hex6" checked="true">
-        <label for="hex6">Long Hexidecimal</label>
-        <input type="radio" name="colorSpace" id="hex3">
-        <label for="hex3">short Hexidecimal</label>
-        <input type="radio" name="colorSpace" id="rgb">
-        <label for="rgb">Red Green Blue</label>
-        <input type="radio" name="colorSpace" id="rgba">
-        <label for="rgba">Red Green Blue Alpha</label>
-        <input type="radio" name="colorSpace" id="hsl">
-        <label for="hsl">Hue Saturation lightness</label>
-        <input type="radio" name="colorSpace" id="hsla">
-        <label for="hsla">Hue Saturation lightness Alpha</label>
-        <input type="radio" name="colorSpace" id="hwb">
-        <label for="hwb">Hue Whiteness Blackness</label>
-        <input type="radio" name="colorSpace" id="lch">
-        <label for="lch">lch</label>
-        <input type="radio" name="colorSpace" id="lab">
-        <label for="lab">lab</label>
-    </fieldset>
+<body>
+    <header>
+        <h1>Color Picker</h1>
+    </header>
+    <main>
+        <p>background-color: <span id="colorValue">#ffffff</span></p>
+
+        <button id="colorChange">Change Color!</button>
+
+        <fieldset>
+            <legend>Color types</legend>
+            <fieldset>
+                <legend>working</legend>
+                <input type="radio" name="colorSpace" id="english" checked="true">
+                <label for="english">english</label>
+                <input type="radio" name="colorSpace" id="hex6" checked="true">
+                <label for="hex6">Long Hexidecimal</label>
+                <input type="radio" name="colorSpace" id="hex3">
+                <label for="hex3">short Hexidecimal</label>
+                <input type="radio" name="colorSpace" id="rgb">
+                <label for="rgb">Red Green Blue</label>
+                <input type="radio" name="colorSpace" id="rgba">
+                <label for="rgba">Red Green Blue Alpha</label>
+                <input type="radio" name="colorSpace" id="hsl">
+                <label for="hsl">Hue Saturation lightness</label>
+                <input type="radio" name="colorSpace" id="hsla">
+                <label for="hsla">Hue Saturation lightness Alpha</label>
+            </fieldset>
+            <fieldset>
+                <legend>may not work</legend>
+                <input type="radio" name="colorSpace" id="hwb">
+                <label for="hwb">Hue Whiteness Blackness</label>
+                <input type="radio" name="colorSpace" id="lch">
+                <label for="lch">lch</label>
+                <input type="radio" name="colorSpace" id="lab">
+                <label for="lab">lab</label>
+            </fieldset>
+        </fieldset>
+    </main>
+
     <script src="colorPicker.js"></script>
 </body>
+
 </html>
