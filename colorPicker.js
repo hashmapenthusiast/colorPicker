@@ -1,33 +1,7 @@
-/**
- * Color can be displayed in 7 ways: 
- * english, https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color_keywords
- * #rgb, 
- * #rrggbb,
- * rgb(a,b,c), 
- * rgba(a,b,c,d), 
- * hsl(a,b,c),
- * hsla(a,b,c,d)
- * hwb
- * lch
- * lab coordinate system
- * this will control a website to change the background color
- * allow for user input
- * change the display style
- */
-
-
-
 //HTML COLORS
-//aqua and cyan, fushcia and magenta are both duplicates
-const HTML_COLORS = ['aqua', 'black', 'silver', 'gray', 'white', 'maroon', 'red', 'purple', 'fuchsia', 'green', 'lime', 'olive', 'yellow', 'navy', 'blue', 'teal', 'aqua', 'orange', 'aliceblue', 'antiquewhite', 'aquamarine', 'azure', 'beige', 'bisque', 'blanchedalmond', 'blueviolet', 'brown', 'burlywood', 'cadetblue', 'chartreuse', 'chocolate', 'coral', 'cornflowerblue', 'cornsilk', 'crimson', 'cyan', 'darkblue', 'darkcyan', 'darkgoldenrod', 'darkgray', 'darkgreen', 'darkgrey', 'darkkhaki', 'darkmagenta', 'darkolivegreen', 'darkorange', 'darkorchid', 'darkred', 'darksalmon', 'darkseagreen', 'darkslateblue', 'darkslategray', 'darkslategrey', 'darkturquoise', 'darkviolet', 'deeppink', 'deepskyblue', 'dimgray', 'dimgrey', 'dodgerblue', 'firebrick', 'floralwhite', 'forestgreen', 'fuchsia', 'gainsboro', 'ghostwhite', 'gold', 'goldenrod', 'greenyellow', 'grey', 'honeydew', 'hotpink', 'indianred', 'indigo', 'ivory', 'khaki', 'lavender', 'lavenderblush', 'lawngreen', 'lemonchiffon', 'lightblue', 'lightcoral', 'lightcyan', 'lightgoldenrodyellow', 'lightgray', 'lightgreen', 'lightgrey', 'lightpink', 'lightsalmon', 'lightseagreen', 'lightskyblue', 'lightslategray', 'lightslategrey', 'lightsteelblue', 'lightyellow', 'limegreen', 'linen', 'magenta ', 'mediumaquamarine', 'mediumblue', 'mediumorchid', 'mediumpurple', 'mediumseagreen', 'mediumslateblue', 'mediumspringgreen', 'mediumturquoise', 'mediumvioletred', 'midnightblue', 'mintcream', 'mistyrose', 'moccasin', 'navajowhite', 'oldlace', 'olivedrab', 'orangered', 'orchid', 'palegoldenrod', 'palegreen', 'paleturquoise', 'palevioletred', 'papayawhip', 'peachpuff', 'peru', 'pink', 'plum', 'powderblue', 'rosybrown', 'royalblue', 'saddlebrown', 'salmon', 'sandybrown', 'seagreen', 'seashell', 'sienna', 'skyblue', 'slateblue', 'slategray', 'slategrey', 'snow', 'springgreen', 'steelblue', 'tan', 'thistle', 'tomato', 'turquoise', 'violet', 'wheat', 'whitesmoke', 'yellowgreen', 'rebeccapurple'];
-const HEXADECIMAL = 16;
-const HEX_SHORT = 3;
-const HEX_LONG = 6;
 const MAX_RGB = 256
 const MAX_ALPHA = 101
 const MAX_COLOR_WHEEL = 360
-
-
 
 /**
  * steps for completion
@@ -37,18 +11,9 @@ const MAX_COLOR_WHEEL = 360
  * user interaction
  */
 
-/**
- * 
- * @param {*} len requested length of a valid CSS hex color
- * @returns returns either a 3 or 6 
- */
-function randomHexColor(len) {
 
-    if (len !== HEX_SHORT && len !== HEX_LONG) {
-        len = HEX_SHORT
-    }
-
-    //change to string
+function hexGen(len) {
+    const HEXADECIMAL = 16;
     let colorPreview = ''
 
     // make 6 random numbers in hex
@@ -58,98 +23,113 @@ function randomHexColor(len) {
 
     // change background color
     // console.log(colorPreview);
+    //change to string
+
     return '#' + colorPreview;
 }
 
-function randomColorFromList(list) {
-    return list[Math.floor(Math.random() * list.length)]
+function hex3() {
+    const HEX_SHORT = 3;
+    return hexGen(HEX_SHORT);
+}
+function hex6(len) {
+    const HEX_LONG = 6;
+    return hexGen(HEX_LONG);
 }
 
-function randomRGB() {
+function english() {
+    //aqua and cyan, fushcia and magenta are both duplicates
+    const HTML_COLORS = ['aqua', 'black', 'silver', 'gray', 'white', 'maroon', 'red', 'purple', 'fuchsia', 'green', 'lime', 'olive', 'yellow', 'navy', 'blue', 'teal', 'aqua', 'orange', 'aliceblue', 'antiquewhite', 'aquamarine', 'azure', 'beige', 'bisque', 'blanchedalmond', 'blueviolet', 'brown', 'burlywood', 'cadetblue', 'chartreuse', 'chocolate', 'coral', 'cornflowerblue', 'cornsilk', 'crimson', 'cyan', 'darkblue', 'darkcyan', 'darkgoldenrod', 'darkgray', 'darkgreen', 'darkgrey', 'darkkhaki', 'darkmagenta', 'darkolivegreen', 'darkorange', 'darkorchid', 'darkred', 'darksalmon', 'darkseagreen', 'darkslateblue', 'darkslategray', 'darkslategrey', 'darkturquoise', 'darkviolet', 'deeppink', 'deepskyblue', 'dimgray', 'dimgrey', 'dodgerblue', 'firebrick', 'floralwhite', 'forestgreen', 'fuchsia', 'gainsboro', 'ghostwhite', 'gold', 'goldenrod', 'greenyellow', 'grey', 'honeydew', 'hotpink', 'indianred', 'indigo', 'ivory', 'khaki', 'lavender', 'lavenderblush', 'lawngreen', 'lemonchiffon', 'lightblue', 'lightcoral', 'lightcyan', 'lightgoldenrodyellow', 'lightgray', 'lightgreen', 'lightgrey', 'lightpink', 'lightsalmon', 'lightseagreen', 'lightskyblue', 'lightslategray', 'lightslategrey', 'lightsteelblue', 'lightyellow', 'limegreen', 'linen', 'magenta ', 'mediumaquamarine', 'mediumblue', 'mediumorchid', 'mediumpurple', 'mediumseagreen', 'mediumslateblue', 'mediumspringgreen', 'mediumturquoise', 'mediumvioletred', 'midnightblue', 'mintcream', 'mistyrose', 'moccasin', 'navajowhite', 'oldlace', 'olivedrab', 'orangered', 'orchid', 'palegoldenrod', 'palegreen', 'paleturquoise', 'palevioletred', 'papayawhip', 'peachpuff', 'peru', 'pink', 'plum', 'powderblue', 'rosybrown', 'royalblue', 'saddlebrown', 'salmon', 'sandybrown', 'seagreen', 'seashell', 'sienna', 'skyblue', 'slateblue', 'slategray', 'slategrey', 'snow', 'springgreen', 'steelblue', 'tan', 'thistle', 'tomato', 'turquoise', 'violet', 'wheat', 'whitesmoke', 'yellowgreen', 'rebeccapurple'];
+    return HTML_COLORS[Math.floor(Math.random() * HTML_COLORS.length)]
+}
+
+function colorCodeGen(f, a) {
+    return `${f}(${a[0]}, ${a[1]}, ${a[2]}${a[3] !== undefined ? ', ' + a[3] : ''})`
+}
+
+
+function rgb() {
     let rgb = [];
     for (let i = 0; i < 3; i++) {
         rgb.push(Math.floor(Math.random() * MAX_RGB))
     }
-    [a, b, c] = rgb
-    return `rgb(${a}, ${b}, ${c})`
+    return colorCodeGen('rgb', rgb)
 }
 
-function randomRGBA() {
+function rgba() {
     let rgb = [];
     for (let i = 0; i < 3; i++) {
         rgb.push(Math.floor(Math.random() * MAX_RGB))
     }
-    [a, b, c] = rgb
     d = Math.random().toFixed(3)
-    return `rgba(${a}, ${b}, ${c}, ${d})`
+    rgb.push(d)
+    return colorCodeGen('rgba', rgb)
 }
 
-function randomHSL(){
-    let h = Math.floor(Math.random() * MAX_COLOR_WHEEL)
-    let s =  Math.floor(Math.random() * MAX_ALPHA)
-    let l =  Math.floor(Math.random() * MAX_ALPHA)
-    return `hsl(${h}, ${s}%, ${l}%)`
-}
-function randomHSLA(){
-    let h = Math.floor(Math.random() * MAX_COLOR_WHEEL)
-    let s =  Math.floor(Math.random() * MAX_ALPHA)
-    let l =  Math.floor(Math.random() * MAX_ALPHA)
-    let a =  Math.random().toFixed(3)
-    return `hsla(${h}, ${s}%, ${l}%, ${a})`
+function hsl() {
+    let h = Math.floor(Math.random() * MAX_COLOR_WHEEL) 
+    let s = Math.floor(Math.random() * MAX_ALPHA)+'%'
+    let l = Math.floor(Math.random() * MAX_ALPHA)+'%'
+    return colorCodeGen('hsl', [h,s,l])
 }
 
-function randomHWB(){
+function hsla() {
     let h = Math.floor(Math.random() * MAX_COLOR_WHEEL)
-    let w =  Math.floor(Math.random() * MAX_ALPHA)
-    let b =  Math.floor(Math.random() * MAX_ALPHA)
-    let a =  Math.random().toFixed(3)
+    let s = Math.floor(Math.random() * MAX_ALPHA)+'%'
+    let l = Math.floor(Math.random() * MAX_ALPHA)+'%'
+    let a = Math.random().toFixed(3)
+    return colorCodeGen('hsla', [h,s,l,a])
+}
+
+function hwb() {
+    let h = Math.floor(Math.random() * MAX_COLOR_WHEEL)
+    let w = Math.floor(Math.random() * MAX_ALPHA)
+    let b = Math.floor(Math.random() * MAX_ALPHA)
+    let a = Math.random().toFixed(3)
     return `hwb(${h} ${w} ${b} / ${a})`
 }
 
-function randomLCH(){
-    let a = (Math.random()*MAX_COLOR_WHEEL).toFixed(4)
-    let b = (Math.random()*MAX_ALPHA).toFixed(4)
-    let c = (Math.random()*MAX_ALPHA).toFixed(4)
-    let d = (Math.random()*MAX_ALPHA).toFixed(2)
+function lch() {
+    let a = (Math.random() * MAX_COLOR_WHEEL).toFixed(4)
+    let b = (Math.random() * MAX_ALPHA).toFixed(4)
+    let c = (Math.random() * MAX_ALPHA).toFixed(4)
+    let d = (Math.random() * MAX_ALPHA).toFixed(2)
     return `lch(${a}% ${b} ${c} / ${d})`
 }
 
-function randomLAB(){
-    let a = (Math.random()*MAX_ALPHA).toFixed(4)
-    let b = (Math.random()*MAX_ALPHA).toFixed(4)
-    let c = (Math.random()*MAX_ALPHA).toFixed(4)
-    let d = (Math.random()*MAX_ALPHA).toFixed(2)
+function lab() {
+    let a = (Math.random() * MAX_ALPHA).toFixed(4)
+    let b = (Math.random() * MAX_ALPHA).toFixed(4)
+    let c = (Math.random() * MAX_ALPHA).toFixed(4)
+    let d = (Math.random() * MAX_ALPHA).toFixed(2)
     return `lab(${a}% ${b} ${c} / ${d})`
 }
 
-function changeColor(colorObj) {
-    console.log(colorObj)
-    let colorPreview = colorObj.f(colorObj.p);
+let colorF = hex6;
+
+document.querySelector('#colorChange').addEventListener('click', function () {
+        console.log('button clicked')
+        changeColor(colorF)
+    }
+)
+
+function changeColor(colorFunc) {
+    // console.log(colorFunc)
+    let colorPreview = colorFunc();
     console.log(colorPreview)
     document.querySelector('#colorValue').textContent = colorPreview;
     document.body.style.backgroundColor = colorPreview;
 }
 
-let colorF = { f: randomHexColor, p: HEX_LONG }
 
-document.querySelector('#colorChange').addEventListener('click',
-    function () {
-        console.log('clicked')
-        changeColor(colorF)
-    }
-    // 
-)
-
-
-document.querySelector('#longHex').addEventListener('click', () => colorF = { f: randomHexColor, p: HEX_LONG })
-document.querySelector('#shortHex').addEventListener('click', () => colorF = { f: randomHexColor, p: HEX_SHORT })
-document.querySelector('#english').addEventListener('click', () => colorF = { f: randomColorFromList, p: HTML_COLORS })
-document.querySelector('#rgb').addEventListener('click', () => colorF = { f: randomRGB, p: null })
-document.querySelector('#rgba').addEventListener('click', () => colorF = { f: randomRGBA, p: null })
-document.querySelector('#hsl').addEventListener('click', () => colorF = { f: randomHSL, p: null })
-document.querySelector('#hsla').addEventListener('click', () => colorF = { f: randomHSLA, p: null })
-document.querySelector('#hwb').addEventListener('click', () => colorF = { f: randomHWB, p: null })
-document.querySelector('#lch').addEventListener('click', () => colorF = { f: randomLCH, p: null })
-document.querySelector('#lab').addEventListener('click', () => colorF = { f: randomLAB, p: null })
-
-
+// dynamically get all the radio buttons with a query selector
+const radioInputs = document.querySelectorAll('[name="colorSpace"]');
+// console.log(radioInputs)
+for (let input of radioInputs) {
+    // console.log(input.id, input)
+    // console.log(input.id)
+    input.addEventListener('click', function () {
+        // console.log(`clicked ${input.id}`)
+        colorF = window[input.id]
+    })
+}
